@@ -25,7 +25,7 @@ subject_dashboard_url_config = UrlConfig(
     identifier_pattern="\w+",
 )
 
-urlpatterns = subject_review_listboard_url_config.listboard_urls
+urlpatterns = subject_review_listboard_url_config.review_listboard_urls
 urlpatterns += subject_dashboard_url_config.dashboard_urls
 
 

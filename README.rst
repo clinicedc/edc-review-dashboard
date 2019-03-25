@@ -3,7 +3,34 @@
 Edc Review Dashboard
 ====================
 
-A dashboard with direct links to a subject's CRFs and Requisitions.
+An alternative dashboard of a subject's visits, CRFs and Requisitions.
+
+
+Declare in your app:
+
+
+.. code-block:: python
+
+    class SubjectReviewListboardView(Base):
+
+        listboard_model = 'ambition_subject.subjectvisit'
+        model_wrapper_cls = SubjectVisitModelWrapper
+        navbar_name = 'ambition_dashboard'
+
+Add URLs:
+
+.. code-block:: python
+
+	urlpatterns = ....
+
+    review_listboard_url_config = UrlConfig(
+        url_name='subject_listboard_url',
+        view_class=SubjectListboardView,
+        label='subject_listboard',
+        identifier_label='subject_identifier',
+        identifier_pattern=subject_identifier)
+    urlpatterns += review_listboard_url_config.review_listboard_urls
+
 
 
 .. |pypi| image:: https://img.shields.io/pypi/v/edc-review-dashboard.svg

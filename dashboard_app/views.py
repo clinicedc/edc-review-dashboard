@@ -13,7 +13,8 @@ from edc_subject_dashboard.views import (
 class SubjectReviewListboardView(BaseSubjectReviewListboardView):
 
     listboard_model = "dashboard_app.subjectvisit"
-    navbar_name = "dashboard_app"
+    navbar_name = "edc_review_dashboard"
+    navbar_selected = "review"
 
     def get_navbar_context_data(self, context):
         return context
