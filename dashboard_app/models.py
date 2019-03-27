@@ -20,6 +20,7 @@ from edc_sites.models import SiteModelMixin
 from edc_utils.date import get_utcnow
 from edc_visit_schedule.model_mixins import OnScheduleModelMixin, OffScheduleModelMixin
 from edc_visit_tracking.model_mixins import CrfModelMixin, VisitModelMixin
+from edc_consent.field_mixins.identity_fields_mixin import IdentityFieldsMixin
 
 
 class BasicModel(SiteModelMixin, BaseUuidModel):
@@ -59,23 +60,12 @@ class DeathReport(UniqueSubjectIdentifierFieldMixin, SiteModelMixin, BaseUuidMod
 class SubjectConsent(
     ConsentModelMixin,
     PersonalFieldsMixin,
+    IdentityFieldsMixin,
     UniqueSubjectIdentifierFieldMixin,
     UpdatesOrCreatesRegistrationModelMixin,
     SiteModelMixin,
     BaseUuidModel,
 ):
-
-    consent_datetime = models.DateTimeField(default=get_utcnow)
-
-    version = models.CharField(max_length=25, default="1")
-
-    identity = models.CharField(max_length=25, default="111111111")
-
-    confirm_identity = models.CharField(max_length=25, default="111111111")
-
-    dob = models.DateField(default=date(1995, 1, 1))
-
-    gender = models.CharField(max_length=25, default=MALE)
 
     objects = SubjectIdentifierManager()
 
