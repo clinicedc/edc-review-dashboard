@@ -9,6 +9,7 @@ from .models import (
     CrfThree,
     CrfTwo,
     CrfSix,
+    SubjectConsent,
     SubjectRequisition,
     SubjectVisit,
     OnSchedule,
@@ -23,6 +24,11 @@ class OnScheduleAdmin(ModelAdminSubjectDashboardMixin, admin.ModelAdmin):
 
 @admin.register(OffSchedule, site=dashboard_app_admin)
 class OffScheduleAdmin(ModelAdminSubjectDashboardMixin, admin.ModelAdmin):
+    pass
+
+
+@admin.register(SubjectConsent, site=dashboard_app_admin)
+class SubjectConsentAdmin(ModelAdminSubjectDashboardMixin, admin.ModelAdmin):
     pass
 
 
