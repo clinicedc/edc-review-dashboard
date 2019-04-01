@@ -35,6 +35,7 @@ setup(
     install_requires=[
         'edc_metadata',
         'edc_dashboard',
+        'edc_lab_dashboard',
         'edc_subject_dashboard',
     ],
     classifiers=[

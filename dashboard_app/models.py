@@ -7,7 +7,6 @@ from edc_appointment.models import Appointment
 from edc_consent.field_mixins import PersonalFieldsMixin
 from edc_consent.model_mixins import ConsentModelMixin
 from edc_constants.choices import YES_NO
-from edc_constants.constants import MALE
 from edc_identifier.managers import SubjectIdentifierManager
 from edc_identifier.model_mixins import UniqueSubjectIdentifierFieldMixin
 from edc_lab.model_mixins import RequisitionModelMixin
@@ -17,7 +16,6 @@ from edc_offstudy.model_mixins import OffstudyModelMixin
 from edc_reference.model_mixins import ReferenceModelMixin
 from edc_registration.model_mixins import UpdatesOrCreatesRegistrationModelMixin
 from edc_sites.models import SiteModelMixin
-from edc_utils.date import get_utcnow
 from edc_visit_schedule.model_mixins import OnScheduleModelMixin, OffScheduleModelMixin
 from edc_visit_tracking.model_mixins import CrfModelMixin, VisitModelMixin
 from edc_consent.field_mixins.identity_fields_mixin import IdentityFieldsMixin
@@ -158,11 +156,6 @@ class CrfSix(BaseCrfModel, CrfModelMixin, BaseUuidModel):
 class CrfSeven(BaseCrfModel, CrfModelMixin, BaseUuidModel):
 
     pass
-
-
-# class Requisition(BaseCrfModel, RequisitionModelMixin, CrfModelMixin, BaseUuidModel):
-#
-#     pass
 
 
 class RedirectModel(BaseUuidModel):

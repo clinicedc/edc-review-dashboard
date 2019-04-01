@@ -18,7 +18,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     ETC_DIR=join(base_dir, app_name, "tests", "etc"),
     EDC_BOOTSTRAP=3,
     SUBJECT_VISIT_MODEL="dashboard_app.subjectvisit",
-    LAB_DASHBOARD_REQUISITION_MODEL="dashboard_app.subjectrequisition",
+    SUBJECT_REQUISITION_MODEL="dashboard_app.subjectrequisition",
     INSTALLED_APPS=[
         'django.contrib.admin',
         'django.contrib.auth',
