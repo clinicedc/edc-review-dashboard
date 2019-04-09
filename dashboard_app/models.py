@@ -86,10 +86,7 @@ class SubjectVisit(
     reason = models.CharField(max_length=25)
 
 
-class SubjectRequisition(
-    RequisitionModelMixin,
-    BaseUuidModel,
-):
+class SubjectRequisition(RequisitionModelMixin, BaseUuidModel):
 
     subject_visit = models.ForeignKey(SubjectVisit, on_delete=PROTECT)
 

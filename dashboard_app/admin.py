@@ -1,5 +1,8 @@
 from django.contrib import admin
-from edc_model_admin.dashboard import ModelAdminCrfDashboardMixin, ModelAdminSubjectDashboardMixin
+from edc_model_admin.dashboard import (
+    ModelAdminCrfDashboardMixin,
+    ModelAdminSubjectDashboardMixin,
+)
 
 from .admin_site import dashboard_app_admin
 from .models import (
