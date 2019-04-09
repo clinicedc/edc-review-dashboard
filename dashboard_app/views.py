@@ -3,11 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic.base import TemplateView
 from edc_dashboard.view_mixins import EdcViewMixin
+from edc_dashboard.views import ListboardView
 from edc_navbar import NavbarViewMixin
 from edc_review_dashboard.views import (
-    SubjectReviewListboardView as BaseSubjectReviewListboardView)
-from edc_subject_dashboard.views import (
-    SubjectDashboardView as BaseSubjectDashboardView)
+    SubjectReviewListboardView as BaseSubjectReviewListboardView,
+)
+from edc_subject_dashboard.views import SubjectDashboardView as BaseSubjectDashboardView
 
 
 class SubjectReviewListboardView(BaseSubjectReviewListboardView):
@@ -33,6 +34,17 @@ class SubjectDashboardView(BaseSubjectDashboardView):
     consent_model = "dashboard_app.subjectconsent"
     navbar_name = "dashboard_app"
     visit_model = "dashboard_app.subjectvisit"
+
+    def get_navbar_context_data(self, context):
+        return context
+
+
+class SubjectListboardView(ListboardView):
+
+    listboard_model = "dashboard_app.subjectvisit"
+    listboard_template = "subject_listboard_template"
+    listboard_url = "subject_listboard_url"
+    navbar_name = "dashboard_app"
 
     def get_navbar_context_data(self, context):
         return context
