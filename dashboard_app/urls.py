@@ -12,12 +12,11 @@ from .views import (
 app_name = "dashboard_app"
 
 urlpatterns = SubjectReviewListboardView.urls(
-    app_name, label="subject_review_listboard"
-)
-
-urlpatterns += SubjectDashboardView.urls(app_name, label="subject_dashboard")
-
-urlpatterns += SubjectListboardView.urls(app_name, label="subject_dashboard")
+    app_name, label="subject_review_listboard")
+urlpatterns += SubjectDashboardView.urls(
+    app_name, label="subject_dashboard")
+urlpatterns += SubjectListboardView.urls(
+    app_name, label="subject_dashboard")
 
 urlpatterns += [
     path("admin/", admin.site.urls),
