@@ -1,6 +1,5 @@
 import uuid
 
-from datetime import date
 from django.db import models
 from django.db.models.deletion import CASCADE, PROTECT
 from edc_appointment.models import Appointment

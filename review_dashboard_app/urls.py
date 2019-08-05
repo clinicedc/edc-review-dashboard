@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .admin_site import dashboard_app_admin
+from .admin_site import review_dashboard_app_admin
 from .views import (
     HomeView,
     SubjectDashboardView,
@@ -9,7 +9,7 @@ from .views import (
     SubjectReviewListboardView,
 )
 
-app_name = "dashboard_app"
+app_name = "review_dashboard_app"
 
 urlpatterns = SubjectReviewListboardView.urls(
     app_name, label="subject_review_listboard")
@@ -20,7 +20,7 @@ urlpatterns += SubjectListboardView.urls(
 
 urlpatterns += [
     path("admin/", admin.site.urls),
-    path("admin/", dashboard_app_admin.urls),
+    path("admin/", review_dashboard_app_admin.urls),
     path("", HomeView.as_view(), name="home_url"),
     path("", HomeView.as_view(), name="administration_url"),
 ]

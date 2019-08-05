@@ -8,5 +8,5 @@ class DashboardAppAdminSite(AdminSite):
     site_url = "/administration/"
 
 
-dashboard_app_admin = DashboardAppAdminSite(name="dashboard_app_admin")
-# dashboard_app_admin.disable_action("delete")
+review_dashboard_app_admin = DashboardAppAdminSite(
+    name="review_dashboard_app_admin")

@@ -1,6 +1,7 @@
 edc_auth
 edc_action_item
 edc_consent
+edc_data_manager
 edc_dashboard
 edc_device
 edc_identifier
