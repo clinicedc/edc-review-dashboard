@@ -19,6 +19,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     EDC_BOOTSTRAP=3,
     SUBJECT_VISIT_MODEL="review_dashboard_app.subjectvisit",
     SUBJECT_REQUISITION_MODEL="review_dashboard_app.subjectrequisition",
+    EDC_NAVBAR_DEFAULT=app_name,
     INSTALLED_APPS=[
         'django.contrib.admin',
         'django.contrib.auth',

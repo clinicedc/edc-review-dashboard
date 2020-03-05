@@ -11,11 +11,6 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 with open(os.path.join(os.path.dirname(__file__), 'VERSION')) as f:
     VERSION = f.read()
 
-tests_require = ["django-webtest", ]
-with open(join(dirname(abspath(__file__)), 'requirements.txt')) as f:
-    for line in f:
-        tests_require.append(line.strip())
-
 # allow setup.py to be run from any path
 os.chdir(normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
@@ -31,13 +26,8 @@ setup(
     description='A dashboard with direct links to a subject\'s CRFs and Requisitions.',
     long_description=README,
     zip_safe=False,
-    keywords='django edc crf requisition dashboard',
-    install_requires=[
-        'edc_metadata',
-        'edc_dashboard',
-        'edc_lab_dashboard',
-        'edc_subject_dashboard',
-    ],
+    keywords='django edc review dashboard',
+    install_requires=[],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
@@ -50,6 +40,5 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     python_requires=">=3.7",
-    tests_require=tests_require,
     test_suite='runtests.main',
 )
