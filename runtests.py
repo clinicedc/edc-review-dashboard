@@ -8,7 +8,7 @@ from django.test.runner import DiscoverRunner
 from edc_test_utils import DefaultTestSettings
 from os.path import abspath, dirname, join
 
-app_name = 'edc_review_dashboard'
+app_name = "edc_review_dashboard"
 base_dir = dirname(abspath(__file__))
 
 DEFAULT_SETTINGS = DefaultTestSettings(
@@ -21,44 +21,45 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     SUBJECT_REQUISITION_MODEL="review_dashboard_app.subjectrequisition",
     EDC_NAVBAR_DEFAULT=app_name,
     INSTALLED_APPS=[
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        'django.contrib.sites',
-        'django_extensions',
-        'django_crypto_fields.apps.AppConfig',
-        'django_revision.apps.AppConfig',
-        'edc_auth.apps.AppConfig',
-        'edc_action_item.apps.AppConfig',
-        'edc_consent.apps.AppConfig',
-        'edc_dashboard.apps.AppConfig',
-        'edc_data_manager.apps.AppConfig',
-        'edc_device.apps.AppConfig',
-        'edc_identifier.apps.AppConfig',
-        'edc_lab.apps.AppConfig',
-        'edc_lab_dashboard.apps.AppConfig',
-        'edc_locator.apps.AppConfig',
-        'edc_metadata_rules.apps.AppConfig',
-        'edc_model_admin.apps.AppConfig',
-        'edc_navbar.apps.AppConfig',
-        'edc_notification.apps.AppConfig',
-        'edc_prn.apps.AppConfig',
-        'edc_protocol.apps.AppConfig',
-        'edc_reference.apps.AppConfig',
-        'edc_registration.apps.AppConfig',
-        'edc_sites.apps.AppConfig',
-        'edc_subject_dashboard.apps.AppConfig',
-        'edc_timepoint.apps.AppConfig',
-        'edc_visit_schedule.apps.AppConfig',
-        'edc_review_dashboard.apps.AppConfig',
-        'review_dashboard_app.apps.EdcAppointmentAppConfig',
-        'review_dashboard_app.apps.EdcFacilityAppConfig',
-        'review_dashboard_app.apps.EdcMetadataAppConfig',
-        'review_dashboard_app.apps.EdcVisitTrackingAppConfig',
-        'review_dashboard_app.apps.AppConfig',
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        "django.contrib.sites",
+        "django_extensions",
+        "django_crypto_fields.apps.AppConfig",
+        "django_revision.apps.AppConfig",
+        "edc_auth.apps.AppConfig",
+        "edc_action_item.apps.AppConfig",
+        "edc_consent.apps.AppConfig",
+        "edc_crf.apps.AppConfig",
+        "edc_dashboard.apps.AppConfig",
+        "edc_data_manager.apps.AppConfig",
+        "edc_device.apps.AppConfig",
+        "edc_identifier.apps.AppConfig",
+        "edc_lab.apps.AppConfig",
+        "edc_lab_dashboard.apps.AppConfig",
+        "edc_locator.apps.AppConfig",
+        "edc_metadata_rules.apps.AppConfig",
+        "edc_model_admin.apps.AppConfig",
+        "edc_navbar.apps.AppConfig",
+        "edc_notification.apps.AppConfig",
+        "edc_prn.apps.AppConfig",
+        "edc_protocol.apps.AppConfig",
+        "edc_reference.apps.AppConfig",
+        "edc_registration.apps.AppConfig",
+        "edc_sites.apps.AppConfig",
+        "edc_subject_dashboard.apps.AppConfig",
+        "edc_timepoint.apps.AppConfig",
+        "edc_visit_schedule.apps.AppConfig",
+        "edc_review_dashboard.apps.AppConfig",
+        "review_dashboard_app.apps.EdcAppointmentAppConfig",
+        "review_dashboard_app.apps.EdcFacilityAppConfig",
+        "review_dashboard_app.apps.EdcMetadataAppConfig",
+        "review_dashboard_app.apps.EdcVisitTrackingAppConfig",
+        "review_dashboard_app.apps.AppConfig",
     ],
     DASHBOARD_URL_NAMES={},
     DASHBOARD_BASE_TEMPLATES={
@@ -78,9 +79,10 @@ def main():
     if not settings.configured:
         settings.configure(**DEFAULT_SETTINGS)
     django.setup()
-    tags = [t.split('=')[1] for t in sys.argv if t.startswith('--tag')]
-    failures = DiscoverRunner(
-        failfast=False, tags=tags).run_tests([f'{app_name}.tests'])
+    tags = [t.split("=")[1] for t in sys.argv if t.startswith("--tag")]
+    failures = DiscoverRunner(failfast=False, tags=tags).run_tests(
+        [f"{app_name}.tests"]
+    )
     sys.exit(failures)
 
 
