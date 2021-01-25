@@ -27,6 +27,7 @@ edc-lab
 edc-lab-dashboard
 edc-label
 edc-list-data
+edc-ltfu
 edc-locator
 edc-metadata
 edc-metadata-rules
