@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-import django
 import logging
 import sys
+from os.path import abspath, dirname, join
 
+import django
 from django.conf import settings
 from django.test.runner import DiscoverRunner
 from edc_test_utils import DefaultTestSettings
-from os.path import abspath, dirname, join
 
 app_name = "edc_review_dashboard"
 base_dir = dirname(abspath(__file__))
@@ -81,9 +81,7 @@ def main():
         settings.configure(**DEFAULT_SETTINGS)
     django.setup()
     tags = [t.split("=")[1] for t in sys.argv if t.startswith("--tag")]
-    failures = DiscoverRunner(failfast=False, tags=tags).run_tests(
-        [f"{app_name}.tests"]
-    )
+    failures = DiscoverRunner(failfast=False, tags=tags).run_tests([f"{app_name}.tests"])
     sys.exit(failures)
 
 
