@@ -8,5 +8,4 @@ class DashboardAppAdminSite(AdminSite):
     site_url = "/administration/"
 
 
-review_dashboard_app_admin = DashboardAppAdminSite(
-    name="review_dashboard_app_admin")
+review_dashboard_app_admin = DashboardAppAdminSite(name="review_dashboard_app_admin")

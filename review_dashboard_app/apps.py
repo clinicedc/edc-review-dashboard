@@ -1,9 +1,9 @@
+from dateutil.relativedelta import FR, MO, SA, SU, TH, TU, WE
 from django.apps import AppConfig as DjangoAppConfig
-from dateutil.relativedelta import SU, MO, TU, WE, TH, FR, SA
-from edc_facility.apps import AppConfig as BaseEdcFacilityAppConfig
-from edc_visit_tracking.apps import AppConfig as BaseEdcVisitTrackingAppConfig
 from edc_appointment.apps import AppConfig as BaseEdcAppointmentAppConfig
+from edc_facility.apps import AppConfig as BaseEdcFacilityAppConfig
 from edc_metadata.apps import AppConfig as BaseEdcMetadataAppConfig
+from edc_visit_tracking.apps import AppConfig as BaseEdcVisitTrackingAppConfig
 
 
 class AppConfig(DjangoAppConfig):
@@ -23,9 +23,7 @@ class EdcFacilityAppConfig(BaseEdcFacilityAppConfig):
             days=[MO, TU, WE, TH, FR, SA, SU],
             slots=[100, 100, 100, 100, 100, 100, 100],
         ),
-        "5-day-clinic": dict(
-            days=[MO, TU, WE, TH, FR], slots=[100, 100, 100, 100, 100]
-        ),
+        "5-day-clinic": dict(days=[MO, TU, WE, TH, FR], slots=[100, 100, 100, 100, 100]),
     }
 
 

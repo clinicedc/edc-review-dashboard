@@ -5,10 +5,11 @@ from django.views.generic.base import TemplateView
 from edc_dashboard.view_mixins import EdcViewMixin
 from edc_dashboard.views import ListboardView
 from edc_navbar import NavbarViewMixin
+from edc_subject_dashboard.views import SubjectDashboardView as BaseSubjectDashboardView
+
 from edc_review_dashboard.views import (
     SubjectReviewListboardView as BaseSubjectReviewListboardView,
 )
-from edc_subject_dashboard.views import SubjectDashboardView as BaseSubjectDashboardView
 
 
 class SubjectReviewListboardView(BaseSubjectReviewListboardView):

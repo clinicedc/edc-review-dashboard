@@ -4,6 +4,7 @@ from django.db import models
 from django.db.models.deletion import CASCADE, PROTECT
 from edc_appointment.models import Appointment
 from edc_consent.field_mixins import PersonalFieldsMixin
+from edc_consent.field_mixins.identity_fields_mixin import IdentityFieldsMixin
 from edc_consent.model_mixins import ConsentModelMixin
 from edc_constants.choices import YES_NO
 from edc_crf.model_mixins import CrfModelMixin
@@ -16,9 +17,8 @@ from edc_offstudy.model_mixins import OffstudyModelMixin
 from edc_reference.model_mixins import ReferenceModelMixin
 from edc_registration.model_mixins import UpdatesOrCreatesRegistrationModelMixin
 from edc_sites.models import SiteModelMixin
-from edc_visit_schedule.model_mixins import OnScheduleModelMixin, OffScheduleModelMixin
+from edc_visit_schedule.model_mixins import OffScheduleModelMixin, OnScheduleModelMixin
 from edc_visit_tracking.model_mixins import VisitModelMixin
-from edc_consent.field_mixins.identity_fields_mixin import IdentityFieldsMixin
 
 
 class BasicModel(SiteModelMixin, BaseUuidModel):
