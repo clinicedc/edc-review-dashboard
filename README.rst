@@ -1,4 +1,4 @@
-|pypi| |travis| |codecov| |downloads|
+|pypi| |actions| |codecov| |downloads|
 
 Edc Review Dashboard
 ====================
@@ -35,10 +35,10 @@ Add URLs:
 
 .. |pypi| image:: https://img.shields.io/pypi/v/edc-review-dashboard.svg
     :target: https://pypi.python.org/pypi/edc-review-dashboard
-    
-.. |travis| image:: https://travis-ci.com/clinicedc/edc-review-dashboard.svg?branch=develop
-    :target: https://travis-ci.com/clinicedc/edc-review-dashboard
-    
+
+.. |actions| image:: https://github.com/clinicedc/edc-review-dashboard/workflows/build/badge.svg?branch=develop
+  :target: https://github.com/clinicedc/edc-review-dashboard/actions?query=workflow:build
+
 .. |codecov| image:: https://codecov.io/gh/clinicedc/edc-review-dashboard/branch/develop/graph/badge.svg
   :target: https://codecov.io/gh/clinicedc/edc-review-dashboard
 
