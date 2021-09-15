@@ -6,6 +6,7 @@ from os.path import abspath, dirname, join
 import django
 from django.conf import settings
 from django.test.runner import DiscoverRunner
+from edc_constants.constants import IGNORE
 from edc_test_utils import DefaultTestSettings
 
 app_name = "edc_review_dashboard"
@@ -20,6 +21,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     SUBJECT_VISIT_MODEL="review_dashboard_app.subjectvisit",
     SUBJECT_REQUISITION_MODEL="review_dashboard_app.subjectrequisition",
     EDC_NAVBAR_DEFAULT=app_name,
+    EDC_NAVBAR_VERIFY_ON_LOAD=IGNORE,
     INSTALLED_APPS=[
         "django.contrib.admin",
         "django.contrib.auth",
@@ -39,6 +41,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_dashboard.apps.AppConfig",
         "edc_data_manager.apps.AppConfig",
         "edc_device.apps.AppConfig",
+        "edc_export.apps.AppConfig",
         "edc_identifier.apps.AppConfig",
         "edc_lab.apps.AppConfig",
         "edc_lab_dashboard.apps.AppConfig",
