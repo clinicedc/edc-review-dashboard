@@ -1,3 +1,4 @@
+_version.py
 .Ds_Store
 django_crypto_fields
 db.sqlite*
