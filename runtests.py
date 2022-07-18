@@ -69,7 +69,9 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_base_template": "edc_dashboard/base.html",
         "listboard_base_template": "edc_dashboard/base.html",
         "dashboard_base_template": "edc_dashboard/base.html",
-        "subject_review_listboard_template": "edc_review_dashboard/subject_review_listboard.html",
+        "subject_review_listboard_template": (
+            "edc_review_dashboard/subject_review_listboard.html"
+        ),
         "subject_dashboard_template": "edc_subject_dashboard/dashboard.html",
     },
     add_dashboard_middleware=True,
