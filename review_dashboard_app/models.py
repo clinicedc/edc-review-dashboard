@@ -106,11 +106,11 @@ class BaseCrfModel(SiteModelMixin, models.Model):
     f1 = models.CharField(max_length=50, default=uuid.uuid4)
 
     @property
-    def visit(self):
-        return getattr(self, self.visit_model_attr())
+    def related_visit(self):
+        return getattr(self, self.related_visit_model_attr())
 
     @classmethod
-    def visit_model_attr(cls):
+    def related_visit_model_attr(cls):
         return "subject_visit"
 
     def save(self, *args, **kwargs):
