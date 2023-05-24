@@ -22,7 +22,6 @@ from edc_visit_tracking.model_mixins import VisitModelMixin
 
 
 class BasicModel(SiteModelMixin, BaseUuidModel):
-
     f1 = models.CharField(max_length=10)
     f2 = models.CharField(max_length=10)
     f3 = models.CharField(max_length=10, null=True, blank=False)
@@ -33,12 +32,10 @@ class BasicModel(SiteModelMixin, BaseUuidModel):
 
 
 class OnSchedule(SiteModelMixin, OnScheduleModelMixin, BaseUuidModel):
-
     pass
 
 
 class OffSchedule(SiteModelMixin, OffScheduleModelMixin, BaseUuidModel):
-
     pass
 
 
@@ -48,7 +45,6 @@ class SubjectOffstudy(OffstudyModelMixin, BaseUuidModel):
 
 
 class DeathReport(UniqueSubjectIdentifierFieldMixin, SiteModelMixin, BaseUuidModel):
-
     objects = SubjectIdentifierManager()
 
     def natural_key(self):
@@ -64,7 +60,6 @@ class SubjectConsent(
     SiteModelMixin,
     BaseUuidModel,
 ):
-
     objects = SubjectIdentifierManager()
 
     def natural_key(self):
@@ -78,7 +73,6 @@ class SubjectVisit(
     SiteModelMixin,
     BaseUuidModel,
 ):
-
     appointment = models.OneToOneField(Appointment, on_delete=PROTECT)
 
     subject_identifier = models.CharField(max_length=50)
@@ -87,7 +81,6 @@ class SubjectVisit(
 
 
 class SubjectRequisition(RequisitionModelMixin, BaseUuidModel):
-
     subject_visit = models.ForeignKey(SubjectVisit, on_delete=PROTECT)
 
     requisition_datetime = models.DateTimeField(null=True)
@@ -98,7 +91,6 @@ class SubjectRequisition(RequisitionModelMixin, BaseUuidModel):
 
 
 class BaseCrfModel(SiteModelMixin, models.Model):
-
     subject_identifier = models.CharField(max_length=25)
 
     subject_visit = models.ForeignKey(SubjectVisit, on_delete=CASCADE)
@@ -126,40 +118,32 @@ class CrfOne(BaseCrfModel, CrfModelMixin, BaseUuidModel):
 
 
 class CrfTwo(BaseCrfModel, CrfModelMixin, BaseUuidModel):
-
     pass
 
 
 class CrfThree(BaseCrfModel, CrfModelMixin, BaseUuidModel):
-
     pass
 
 
 class CrfFour(BaseCrfModel, CrfModelMixin, BaseUuidModel):
-
     pass
 
 
 class CrfFive(BaseCrfModel, CrfModelMixin, BaseUuidModel):
-
     pass
 
 
 class CrfSix(BaseCrfModel, CrfModelMixin, BaseUuidModel):
-
     pass
 
 
 class CrfSeven(BaseCrfModel, CrfModelMixin, BaseUuidModel):
-
     pass
 
 
 class RedirectModel(BaseUuidModel):
-
     subject_identifier = models.CharField(max_length=25)
 
 
 class RedirectNextModel(BaseUuidModel):
-
     subject_identifier = models.CharField(max_length=25)

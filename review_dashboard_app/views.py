@@ -13,7 +13,6 @@ from edc_review_dashboard.views import (
 
 
 class SubjectReviewListboardView(BaseSubjectReviewListboardView):
-
     listboard_model = "review_dashboard_app.subjectvisit"
     navbar_name = "edc_review_dashboard"
     navbar_selected = "review"
@@ -31,7 +30,6 @@ class SubjectReviewListboardView(BaseSubjectReviewListboardView):
 
 
 class SubjectDashboardView(BaseSubjectDashboardView):
-
     consent_model = "review_dashboard_app.subjectconsent"
     navbar_name = "review_dashboard_app"
     visit_model = "review_dashboard_app.subjectvisit"
@@ -41,7 +39,6 @@ class SubjectDashboardView(BaseSubjectDashboardView):
 
 
 class SubjectListboardView(ListboardView):
-
     listboard_model = "review_dashboard_app.subjectvisit"
     listboard_template = "subject_listboard_template"
     listboard_url = "subject_listboard_url"
@@ -52,7 +49,6 @@ class SubjectListboardView(ListboardView):
 
 
 class HomeView(EdcViewMixin, NavbarViewMixin, TemplateView):
-
     template_name = "review_dashboard_app/home.html"
     navbar_name = "review_dashboard_app"
     navbar_selected_item = "review_dashboard_app"
