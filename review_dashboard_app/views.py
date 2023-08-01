@@ -13,7 +13,7 @@ from edc_review_dashboard.views import (
 
 
 class SubjectReviewListboardView(BaseSubjectReviewListboardView):
-    listboard_model = "review_dashboard_app.subjectvisit"
+    listboard_model = "edc_visit_tracking.subjectvisit"
     navbar_name = "edc_review_dashboard"
     navbar_selected = "review"
 
@@ -39,7 +39,7 @@ class SubjectDashboardView(BaseSubjectDashboardView):
 
 
 class SubjectListboardView(ListboardView):
-    listboard_model = "review_dashboard_app.subjectvisit"
+    listboard_model = "edc_visit_tracking.subjectvisit"
     listboard_template = "subject_listboard_template"
     listboard_url = "subject_listboard_url"
     navbar_name = "review_dashboard_app"

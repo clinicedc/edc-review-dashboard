@@ -6,6 +6,7 @@ from edc_visit_schedule import (
     Schedule,
     Visit,
     VisitSchedule,
+    site_visit_schedules,
 )
 from edc_visit_schedule.tests import DummyPanel
 
@@ -38,7 +39,6 @@ crfs1 = FormsCollection(
 )
 
 crfs2 = FormsCollection(Crf(show_order=1, model=f"{app_label}.crfseven", required=True))
-
 
 crfs_unscheduled = FormsCollection(
     Crf(show_order=1, model=f"{app_label}.crftwo", required=True),
@@ -119,3 +119,4 @@ visit_schedule = VisitSchedule(
 )
 
 visit_schedule.add_schedule(schedule)
+site_visit_schedules.register(visit_schedule)
