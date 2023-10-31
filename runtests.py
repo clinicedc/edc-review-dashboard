@@ -53,7 +53,6 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_notification.apps.AppConfig",
         "edc_prn.apps.AppConfig",
         "edc_protocol.apps.AppConfig",
-        "edc_reference.apps.AppConfig",
         "edc_registration.apps.AppConfig",
         "edc_sites.apps.AppConfig",
         "edc_subject_dashboard.apps.AppConfig",
