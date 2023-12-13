@@ -1,27 +1,24 @@
 #!/usr/bin/env python
 import logging
-import sys
-from os.path import abspath, dirname, join
+from pathlib import Path
 
-import django
-from django.conf import settings
-from django.test.runner import DiscoverRunner
 from edc_constants.constants import IGNORE
-from edc_test_utils import DefaultTestSettings
+from edc_test_utils import DefaultTestSettings, func_main
 
 app_name = "edc_review_dashboard"
-base_dir = dirname(abspath(__file__))
+base_dir = Path(__file__).absolute().parent
 
-DEFAULT_SETTINGS = DefaultTestSettings(
+project_settings = DefaultTestSettings(
     calling_file=__file__,
     BASE_DIR=base_dir,
     APP_NAME=app_name,
-    ETC_DIR=join(base_dir, app_name, "tests", "etc"),
+    ETC_DIR=str(base_dir / app_name / "tests" / "etc"),
     EDC_BOOTSTRAP=3,
     SUBJECT_VISIT_MODEL="edc_visit_tracking.subjectvisit",
     SUBJECT_REQUISITION_MODEL="review_dashboard_app.subjectrequisition",
     EDC_NAVBAR_DEFAULT=app_name,
     EDC_NAVBAR_VERIFY_ON_LOAD=IGNORE,
+    EDC_SITES_REGISTER_DEFAULT=True,
     INSTALLED_APPS=[
         "django.contrib.admin",
         "django.contrib.auth",
@@ -43,6 +40,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_data_manager.apps.AppConfig",
         "edc_device.apps.AppConfig",
         "edc_export.apps.AppConfig",
+        "edc_form_runners.apps.AppConfig",
         "edc_identifier.apps.AppConfig",
         "edc_lab.apps.AppConfig",
         "edc_list_data.apps.AppConfig",
@@ -82,12 +80,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
 
 
 def main():
-    if not settings.configured:
-        settings.configure(**DEFAULT_SETTINGS)
-    django.setup()
-    tags = [t.split("=")[1] for t in sys.argv if t.startswith("--tag")]
-    failures = DiscoverRunner(failfast=False, tags=tags).run_tests([f"{app_name}.tests"])
-    sys.exit(failures)
+    func_main(project_settings, *[f"{app_name}.tests"])
 
 
 if __name__ == "__main__":
