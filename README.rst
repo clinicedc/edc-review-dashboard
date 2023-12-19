@@ -14,7 +14,7 @@ Declare in your app:
     class SubjectReviewListboardView(Base):
 
         listboard_model = 'ambition_subject.subjectvisit'
-        model_wrapper_cls = SubjectVisitModelWrapper
+        model_wrapper_cls = RelatedVisitModelWrapper
         navbar_name = 'ambition_dashboard'
 
 Add URLs:
