@@ -106,7 +106,6 @@ schedule = Schedule(
     onschedule_model=f"{app_label}.onschedule",
     offschedule_model=f"{app_label}.offschedule",
     consent_definitions=[consent_v1],
-    appointment_model="edc_appointment.appointment",
 )
 
 schedule.add_visit(visit0)
