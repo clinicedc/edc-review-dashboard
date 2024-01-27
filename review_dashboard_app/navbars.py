@@ -7,7 +7,7 @@
 # navbar = Navbar(name=settings.APP_NAME)
 #
 # for item in review_navbar.items:
-#     navbar.append_item(item)
+#     navbar.register(item)
 #
 #
 # site_navbars.register(navbar)
