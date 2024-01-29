@@ -2,7 +2,6 @@
 import logging
 from pathlib import Path
 
-from edc_constants.constants import IGNORE
 from edc_test_utils import DefaultTestSettings, func_main
 
 app_name = "edc_review_dashboard"
@@ -17,7 +16,7 @@ project_settings = DefaultTestSettings(
     SUBJECT_VISIT_MODEL="edc_visit_tracking.subjectvisit",
     SUBJECT_REQUISITION_MODEL="review_dashboard_app.subjectrequisition",
     EDC_NAVBAR_DEFAULT=app_name,
-    EDC_NAVBAR_VERIFY_ON_LOAD=IGNORE,
+    SILENCED_SYSTEM_CHECKS=["sites.E101", "edc_navbar.E002", "edc_navbar.E003"],
     EDC_SITES_REGISTER_DEFAULT=True,
     INSTALLED_APPS=[
         "django.contrib.admin",
@@ -31,9 +30,9 @@ project_settings = DefaultTestSettings(
         "multisite",
         "django_crypto_fields.apps.AppConfig",
         "django_revision.apps.AppConfig",
-        "edc_auth.apps.AppConfig",
         "edc_action_item.apps.AppConfig",
         "edc_appointment.apps.AppConfig",
+        "edc_auth.apps.AppConfig",
         "edc_consent.apps.AppConfig",
         "edc_crf.apps.AppConfig",
         "edc_dashboard.apps.AppConfig",
@@ -43,8 +42,9 @@ project_settings = DefaultTestSettings(
         "edc_form_runners.apps.AppConfig",
         "edc_identifier.apps.AppConfig",
         "edc_lab.apps.AppConfig",
-        "edc_list_data.apps.AppConfig",
         "edc_lab_dashboard.apps.AppConfig",
+        "edc_list_data.apps.AppConfig",
+        "edc_listboard.apps.AppConfig",
         "edc_locator.apps.AppConfig",
         "edc_model_admin.apps.AppConfig",
         "edc_navbar.apps.AppConfig",
@@ -52,16 +52,16 @@ project_settings = DefaultTestSettings(
         "edc_prn.apps.AppConfig",
         "edc_protocol.apps.AppConfig",
         "edc_registration.apps.AppConfig",
+        "edc_review_dashboard.apps.AppConfig",
         "edc_sites.apps.AppConfig",
         "edc_subject_dashboard.apps.AppConfig",
         "edc_timepoint.apps.AppConfig",
         "edc_visit_schedule.apps.AppConfig",
         "edc_visit_tracking.apps.AppConfig",
-        "edc_listboard.apps.AppConfig",
-        "edc_review_dashboard.apps.AppConfig",
         "review_dashboard_app.apps.EdcFacilityAppConfig",
         "review_dashboard_app.apps.EdcMetadataAppConfig",
         "review_dashboard_app.apps.AppConfig",
+        "edc_appconfig.apps.AppConfig",
     ],
     DASHBOARD_URL_NAMES={},
     DASHBOARD_BASE_TEMPLATES={
