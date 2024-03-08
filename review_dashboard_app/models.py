@@ -63,6 +63,11 @@ class SubjectConsent(
         return (self.subject_identifier,)
 
 
+class SubjectConsentV1(SubjectConsent):
+    class Meta:
+        proxy = True
+
+
 class SubjectRequisition(RequisitionModelMixin, BaseUuidModel):
     subject_visit = models.ForeignKey(SubjectVisit, on_delete=PROTECT)
 
